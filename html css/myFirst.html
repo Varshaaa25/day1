@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="John Doe">
+    <title>Page Title</title>
+    <style>
+        /* #green{
+            background-color: green;
+            top:90px;
+            left:20px;
+            position: absolute;
+            z-index:0;
+
+        }
+        #red{
+            top:100px;
+            left:120px;
+            background-color: red;
+            position: absolute;
+            z-index:-1;
+        }
+        #blue{
+            top:150px;
+            left:50px;
+            position: absolute;
+            background-color: blue;
+            z-index:-2;
+        }
+        div{
+            height:300px;
+            width:300px;
+        } */
+         
+        .box1{
+           
+            overflow: scroll;
+            width:100px;
+            height:120px;
+        }
+        .box2{
+            
+            overflow: auto;
+            width:100px;
+            height:120px;
+        }
+        .box3{
+            
+            overflow: default;
+            width:100px;
+            height:120px;
+        }
+        .box4{
+            
+            overflow: hidden;
+            width:100px;
+            height:120px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>My First h1 Heading</h1> 
+    <h6>My First h6 Heading</h6>
+    <p><i>My first paragraph.</i></p>
+    <div>This is div</div>
+    <span >This is span.</span>
+    <span>This is my 2nd span.</span>  
+    <img src="" alt="" /> -->
+
+<!-- Z-index -->
+    <div>
+      <div id="green"></div> 
+      <div id="red"></div>
+      <div id="blue"></div>
+    </div>
+
+<!-- Overflow Property-->
+ <h2>scroll</h2>
+    <div class="box1" id="scroll">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque quo a eius nulla at commodi, ratione temporibus ducimus ipsa minima molestias, error vitae consectetur quae similique repudiandae fuga ab deserunt.</div>
+    <h2>auto</h2>
+     <div class="box2" id="auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum delectus quos, minima temporibus necessitatibus alias commodi. Debitis vitae numquam eos, animi, aspernatur aperiam veritatis iure dolorum minus possimus voluptatum?</div>
+     <h2>default-visible</h2>
+     <div class="box3" id="default">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque quo a eius nulla at commodi, ratione temporibus ducimus ipsa minima molestias, error vitae consectetur quae similique repudiandae fuga ab deserunt.</div>
+     <h2>hidden</h2>
+     <div class="box4" id="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum delectus quos, minima temporibus necessitatibus alias commodi. Debitis vitae numquam eos, animi, aspernatur aperiam veritatis iure dolorum minus possimus voluptatum?</div>
+
+     
+</body>
+</html>
+ 
+ 

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown without searchable</title>
+    <style>
+        .form-select{
+           width:250px;
+           height:35px;
+           border: 2px solid black;
+           border-radius: 5px;
+        }
+        .container1{
+       
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin:0px 70px;
+            
+        }
+       table{
+          border-collapse: collapse;
+         
+         
+        }
+        th,td{
+          width:170px;
+          height:120px;
+          text-align: center;
+          vertical-align: middle;
+          /* border: 1px solid #000; */
+          border-bottom: 1px solid black;
+          font-weight: 800;
+          font-size:20px ;
+        }
+        td{
+          font-weight: 300;
+        }
+        .table-container{
+          display: flex;
+          justify-content: center;
+          margin-top:80px;
+        }
+        td:first-child{
+          width:200px;
+          height:200px;
+        }
+        .img{
+          border-radius: 50%;
+          width:150px;
+          height:150px;
+          opacity: 0.9;
+          /* transition: opacity 0.3s ease; */
+          transition: 1.5s;
+          
+        }
+        td:first-child :hover{
+          opacity: 1;
+          transition:1.5s;  
+          transform: scale(1.3);
+          
+        }
+        .name-container .table-container .address-container .designation-container{
+          display: flex;
+          flex-direction: column;
+        }
+        /* @media (max-width:768px){
+          th,td{
+            width:100px;
+            height:100px;
+            font-size: 10px;
+          }
+          .container{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          .container h4{
+            display:block
+          }
+        } */
+         @media(orientation:landscape){
+        
+          .table-container{
+          display: flex;
+          justify-content: center;
+          margin-top:80px;
+        }
+         }
+         @media (max-width:950px){
+           .container1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           }
+           h1{
+            text-align: center;
+            text-decoration: underline;
+           }
+           table{
+          border-collapse: collapse;
+         
+         
+        }
+        th,td{
+          width:70px;
+          height:70px;
+          text-align: center;
+          vertical-align: middle;
+          /* border: 1px solid #000; */
+          border-bottom: 1px solid black;
+          font-weight: 300;
+          font-size:13px ;
+        }
+        td{
+          font-weight: 300;
+        }
+        .table-container{
+          display: flex;
+          justify-content: center;
+          margin-top:80px;
+        }
+        td:first-child{
+          width:200px;
+          height:200px;
+        }
+       
+        .img{
+          border-radius: 50%;
+          width:100px;
+          height:100px;
+          opacity: 0.9;
+          /* transition: opacity 0.3s ease; */
+          transition: 1.5s;
+          
+        }
+        td:first-child :hover{
+          opacity: 1;
+          transition:1.5s;  
+          transform: scale(1.6);
+          
+        }
+
+        @media (max-width:480px){
+         th{
+          border-bottom:0px solid white
+         }
+          th,td{
+            display:flex;
+            flex-direction: column;
+            border: none;
+            width:120px;
+            height:50px;
+            font-size: 18px;
+            
+          }
+          tr {
+            border-bottom: 1px solid black;
+         
+          }
+          th{
+            display: none;
+          }
+          .img{
+          border-radius: 50%;
+          width:120px;
+          height:100px;
+          opacity: 0.9;
+          /* transition: opacity 0.3s ease; */
+          transition: 1.5s;
+          
+          
+        }
+        td:first-child{
+          width:130px;
+          height:130px;
+          margin-top:7px;
+
+        }
+        tr:first-child{
+          border-bottom: none;
+        }
+        td:first-child :hover{
+          opacity: 1;
+          transition:1.5s;  
+          transform: scale(1.6);
+          
+        }
+        }
+         }
+    </style>
+</head>
+<body>
+  <h1 style="text-align:center">Employee Details</h1>
+    <div class="container1">
+      <div class="name-conatiner">
+        <h3>Employee Name</h3>
+        <select class="form-select" aria-label="Default select example" id="emp-name"  onchange="filterRow()">
+          <option value="All" selected>All</option>
+          <option value="Alice">Alice</option>
+          <option value="Bob">Bob</option>
+          <option value="Charlie">Charlie</option>
+          <option value="Daisy">Daisy</option>
+        </select>
+      </div>
+       <div class="type-container">
+        <h3>Employee Type</h3>
+        <select class="form-select" aria-label="Default select example" id="emp-type" onchange="filterRow()">
+          <option value="All" selected >All</option>
+          <option value="Full-Time">Full-Time</option>
+          <option value="Part-Time">Part-Time</option>
+          <option value="Intern">Intern</option>
+        </select>
+       </div>
+        <div class="address-container">
+          <h3>Employee Address</h3>
+          <select class="form-select" aria-label="Default select example" id="emp-address" onchange="filterRow()">
+            <option value="All" selected >All</option>
+            <option value="New York">New York</option>
+          <option value="Chicago">Chicago</option>
+          <option value="San Francisco">San Francisco</option>
+          </select>
+        </div>
+         <div class="designation-container">
+          <h3>Employee Designation</h3>
+          <select class="form-select" aria-label="Default select example" id="emp-designation" onchange="filterRow()">
+          <option value="All" selected>All</option>
+          <option value="Manager">Manager</option>
+          <option value="Developer">Developer</option>
+          <option value="Designer">Designer</option>
+          <option value="Tester">Tester</option>
+          </select>
+         </div>
+          
+    </div>
+
+
+
+   <div class="table-container">
+    <table id="emp-table" >  
+       
+    </table>
+     
+    </div>
+    
+   
+</body>
+<script>
+    const employees = [
+      {profile:"/day 3/img/profile-pic-alice.jpg",name: "Alice", type: "Full-Time", address: "New York", designation: "Manager",email:"alice@galepartners.com"},
+      { profile:"/day 3/img/profile-pic-bob.webp",name: "Bob", type: "Part-Time", address: "Chicago", designation: "Developer",email:"bob@galepartners.com" },
+      { profile:"https://wallpapers.com/images/hd/professional-profile-pictures-2880-x-1920-7jvygpai7v9zkg2j.jpg",name: "Charlie", type: "Full-Time", address: "San Francisco", designation: "Designer",email:"charlie@galepartners.com" },
+      { profile:"/day 3/img/profile-pic-daisy.webp",name: "Daisy", type: "Intern", address: "New York", designation: "Tester",memail:"daisy@galepartners.com" }
+    ];
+  
+
+    function genTable(){
+
+      var table_id = document.getElementById("emp-table")
+
+      const header_tr = document.createElement("tr"); //creating the header row
+      Object.keys(employees[0]).forEach(key =>{
+        const th = document.createElement("th");
+        key = key.toUpperCase();
+        th.appendChild(document.createTextNode(key==='profile'?'Profile Pic':key));
+        header_tr.appendChild(th)
+      });
+      table_id.appendChild(header_tr);
+
+      employees.forEach(item=>{  //creating the data rows
+        const row = document.createElement("tr");
+        row.setAttribute("data-name",item.name)
+        row.setAttribute("data-type",item.type)
+        row.setAttribute("data-address",item.address)
+        row.setAttribute("data-designation",item.designation)
+        Object.keys(item).forEach(key =>{
+          const td = document.createElement("td");
+          if(key==='profile'){
+            const img=document.createElement('img');
+            img.src=item[key];
+            img.alt='profile';
+            img.className="img";
+            td.appendChild(img);
+          }else{
+            td.appendChild(document.createTextNode(item[key]));
+          }
+          
+          row.appendChild(td)
+        })
+        table_id.appendChild(row)  
+     });
+    
+    }
+      
+   
+   
+   function filterRow(){
+      const filterName = document.getElementById('emp-name').value;
+      const filterType = document.getElementById('emp-type').value;
+      const filterAddress = document.getElementById('emp-address').value;
+      const filterDesignation = document.getElementById('emp-designation').value;
+      const table = document.getElementById("emp-table");
+      const rows = table.getElementsByTagName("tr");
+
+      for(let i=1;i<rows.length;i++){
+        const row=rows[i];
+        const empName = row.getAttribute("data-name");
+        const empType = row.getAttribute("data-type");
+        const empAddress = row.getAttribute("data-address");
+        const empDesignation = row.getAttribute("data-designation");
+      
+      let visible = true;
+      if(filterName!=='All' && empName!==filterName) visible=false;
+      if(filterType!=='All' && empType!==filterType) visible=false;
+      if(filterAddress!=='All' && empAddress!==filterAddress) visible=false;
+      if(filterDesignation!=='All' && empDesignation!==filterDesignation) visible=false;
+
+      row.style.display=visible?"":row.write("not avaibale");
+  //     if(row.style.display=="visible"){
+  //       ""
+  //     }
+  //     else{
+       
+  //  var resultBox = document.getElementById("scarf1");
+  //  if(!visible){  // 
+  //      resultBox.innerHTML="A soft brushed cashmere scarf featuring the iconic check. The scarf is made in Scotland at a mill with a long heritage in producing cashmere.To create a subtle lustre and soft texture, the cashmere is washed in spring water, then woven on traditional looms and brushed with natural teasels.Measuring 168 x 30cm/66.1 x 11.8in, the design is hand-finished with fringing.";
+   
+  //     }
+      }
+  }
+    window.onload=genTable;
+</script>
+</html>

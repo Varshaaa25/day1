@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+   <button id="lightOn" onclick="changeImageOn()">
+      Turn on
+    </button>
+    
+    <button id="lightOff" onclick="changeImageOff()">
+        Turn Off
+    </button>
+
+    <img src="/html css/img/image (1).jpeg" id="img1">
+    
+    
+    
+    
+    
+</body>
+<script>
+    function changeImageOn() {
+  // Get the element
+  const lighting = document.getElementById('img1')
+  
+  // Change the background image
+  lighting.src= "/html css/img/image.jpeg"
+
+}
+
+function changeImageOff() {
+  // Get the element
+  const dark = document.getElementById('img1');
+
+  
+  // Change the background image
+  dark.src = "/html css/img/image (1).jpeg"
+
+}
+
+</script>
+</html>

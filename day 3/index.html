@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <!--Alert-->
+    
+    <!-- <div class="box1" id="box1" style="width:200px;height:200px;background-color: red;color:white">
+        parent div
+        <div class="box2" id="box2" style="width:90px;height:90px;background-color:blue;color: white;">
+          child div
+        </div>
+    </div> -->
+
+    <!--dropdown-->
+    <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          select a color
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" id="green" href="#" onclick="changeColor(green)">green</a></li>
+          <li><a class="dropdown-item"id="red" href="#" onclick="changeColor(red)">red</a></li>
+          <li><a class="dropdown-item" id="blue" href="#"onclick="changeColor(blue)">blue</a></li>
+        </ul>
+      </div> -->
+
+      <select onchange=changeColor(value); class="form-select" id="select-option" aria-label="Default select example">
+        <!-- <option selected>Open this select menu</option>
+        <option value="1" id="green" >green</option>
+        <option value="2" id="red" >red</option>
+        <option value="3" id="blue" >blue</option> -->
+      </select>
+
+      <div id="box1" style="width:250px;height:250px;border:1px solid black;margin-top:150px">
+         Background
+      </div>
+
+
+</body>
+<script>
+    const colors = ["red","green","blue"]
+    const opt = document.getElementById('select-option');
+
+    for(var i=0;i<colors.length;i++){
+        var option = document.createElement("option");
+        option.text = colors[i]; 
+        opt.appendChild(option);
+    }
+
+
+
+
+    // function changeColor(params){
+    //     const box1=document.getElementById("box1")
+    //     if(params==1){
+    //      box1.style.backgroundColor="green"
+    //     }
+    //     else if(params==2){
+    //      box1.style.backgroundColor="red"
+    //     }
+    //     else{
+    //         box1.style.backgroundColor="blue"
+    //     }
+     
+     
+// }
+    
+    
+    
+
+
+
+
+    // document.getElementById('bdy')
+    //   .addEventListener('click', function () {
+    //   alert('Body!');
+    //   alert("done")
+    // })
+    // document.getElementById('box1')
+    //   .addEventListener('click', function () {
+    //   alert('parent!');
+      
+      
+      
+    // })
+    // document.getElementById('box2')
+    //   .addEventListener('click', function () {
+ 
+    //   alert("child")
+    //   event.stopPropagation()
+    // })
+
+    
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
