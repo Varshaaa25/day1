@@ -289,7 +289,7 @@
    
    
    function filterRow(){
-      let filterName = document.getElementById('emp-name').value.toLowerCase();
+      const filterName = document.getElementById('emp-name').value.toLowerCase();
       const filterType = document.getElementById('emp-type').value.toLowerCase();
       const filterAddress = document.getElementById('emp-address').value.toLowerCase();
       const filterDesignation = document.getElementById('emp-designation').value.toLowerCase();
@@ -312,22 +312,38 @@
       row.style.display=visible?"":"none";
       }
   }
-  function resetDropdown(){
-    let filterName = document.getElementById('emp-name');
+  function resetDropdown(presentDropdown){
+    // document.getElementById('emp-name').value="";
+    //   document.getElementById('emp-type').value=""
+    //  document.getElementById('emp-address').value=""
+    //  document.getElementById('emp-designation').value=""
 
-    const ResetName = document.getElementById("suggestionsName");
-    const ResetType = document.getElementById("suggestionsType");
-    const ResetAddress = document.getElementById("suggestionsAddress");
-    const ResetDesignation = document.getElementById("suggestionsDesignation");
+     const filters=['emp-name','emp-type','emp-address','emp-designation'];
+
+     filters.forEach(id =>{
+      if(id!=presentDropdown){
+        document.getElementById(id).value="";
+      }
+     })
+
+    
    
 
-    if(filterName==oninput){
-       ResetType.value="All";
-
-      
-    }
-    
+    filterRow()
   }
+
+    document.getElementById('emp-name').addEventListener('input',function(){
+      resetDropdown("emp-name");});
+    document.getElementById('emp-type').addEventListener('input',function(){
+      resetDropdown("emp-type");});
+    document.getElementById('emp-address').addEventListener('input',function(){
+      resetDropdown("emp-address");});
+    document.getElementById('emp-designation').addEventListener('input',function(){
+      resetDropdown("emp-designation");});
+
+    
+    
+  
   // let filterName = document.getElementById('emp-name');
   // console.log(filterName.oninput())
   resetDropdown();
