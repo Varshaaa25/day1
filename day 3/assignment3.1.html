@@ -44,7 +44,7 @@
           margin-top:80px;
         }
         td:first-child{
-          width:200px;
+          width:300px;
           height:200px;
         }
         .img{
@@ -238,13 +238,15 @@
          
      </div>
 
+    
+
 </body>
 <script>
     const employees = [
-      {profile:"/day 3/img/profile-pic-alice.jpg",name: "Alice", type: "Full-Time", address: "New York", designation: "Manager",email:"alice@galepartners.com"},
-      { profile:"/day 3/img/profile-pic-bob.webp",name: "Bob", type: "Part-Time", address: "Chicago", designation: "Developer",email:"bob@galepartners.com" },
+      {profile:"/img/profile-pic-alice.jpg",name: "Alice", type: "Full-Time", address: "New York", designation: "Manager",email:"alice@galepartners.com"},
+      { profile:"/img/profile-pic-bob.webp",name: "Bob", type: "Part-Time", address: "Chicago", designation: "Developer",email:"bob@galepartners.com" },
       { profile:"https://wallpapers.com/images/hd/professional-profile-pictures-2880-x-1920-7jvygpai7v9zkg2j.jpg",name: "Charlie", type: "Full-Time", address: "San Francisco", designation: "Designer",email:"charlie@galepartners.com" },
-      { profile:"/day 3/img/profile-pic-daisy.webp",name: "Daisy", type: "Intern", address: "New York", designation: "Tester",memail:"daisy@galepartners.com" }
+      { profile:"/img/profile-pic-daisy.webp",name: "Daisy", type: "Intern", address: "New York", designation: "Tester",memail:"daisy@galepartners.com" }
     ];
   
 
@@ -310,6 +312,8 @@
       if(filterDesignation && !empDesignation.includes(filterDesignation)) visible=false;
 
       row.style.display=visible?"":"none";
+
+      
       }
   }
   function resetDropdown(presentDropdown){
@@ -326,9 +330,6 @@
       }
      })
 
-    
-   
-
     filterRow()
   }
 
@@ -341,14 +342,9 @@
     document.getElementById('emp-designation').addEventListener('input',function(){
       resetDropdown("emp-designation");});
 
-    
-    
-  
-  // let filterName = document.getElementById('emp-name');
-  // console.log(filterName.oninput())
+
   resetDropdown();
-  // let filterName = document.getElementById('emp-name');
-  // console.log(filterName)
+  
   
 
     window.onload=genTable;

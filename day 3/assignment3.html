@@ -43,7 +43,7 @@
           margin-top:80px;
         }
         td:first-child{
-          width:200px;
+          width:300px;
           height:200px;
         }
         .img{
@@ -245,15 +245,17 @@
     </table>
      
     </div>
+
+    
     
    
 </body>
 <script>
     const employees = [
-      {profile:"/day 3/img/profile-pic-alice.jpg",name: "Alice", type: "Full-Time", address: "New York", designation: "Manager",email:"alice@galepartners.com"},
-      { profile:"/day 3/img/profile-pic-bob.webp",name: "Bob", type: "Part-Time", address: "Chicago", designation: "Developer",email:"bob@galepartners.com" },
+      {profile:"/img/profile-pic-alice.jpg",name: "Alice", type: "Full-Time", address: "New York", designation: "Manager",email:"alice@galepartners.com"},
+      { profile:"/img/profile-pic-bob.webp",name: "Bob", type: "Part-Time", address: "Chicago", designation: "Developer",email:"bob@galepartners.com" },
       { profile:"https://wallpapers.com/images/hd/professional-profile-pictures-2880-x-1920-7jvygpai7v9zkg2j.jpg",name: "Charlie", type: "Full-Time", address: "San Francisco", designation: "Designer",email:"charlie@galepartners.com" },
-      { profile:"/day 3/img/profile-pic-daisy.webp",name: "Daisy", type: "Intern", address: "New York", designation: "Tester",memail:"daisy@galepartners.com" }
+      { profile:"/img/profile-pic-daisy.webp",name: "Daisy", type: "Intern", address: "New York", designation: "Tester",memail:"daisy@galepartners.com" }
     ];
   
 
@@ -311,6 +313,10 @@
         const empType = row.getAttribute("data-type");
         const empAddress = row.getAttribute("data-address");
         const empDesignation = row.getAttribute("data-designation");
+
+        const existingnodata=document.getElementById("nodatarow")
+
+        if(existingnodata) existingnodata.remove()
       
       let visible = true;
       if(filterName!=='All' && empName!==filterName) visible=false;
@@ -318,17 +324,10 @@
       if(filterAddress!=='All' && empAddress!==filterAddress) visible=false;
       if(filterDesignation!=='All' && empDesignation!==filterDesignation) visible=false;
 
-      row.style.display=visible?"":row.write("not avaibale");
-  //     if(row.style.display=="visible"){
-  //       ""
-  //     }
-  //     else{
-       
-  //  var resultBox = document.getElementById("scarf1");
-  //  if(!visible){  // 
-  //      resultBox.innerHTML="A soft brushed cashmere scarf featuring the iconic check. The scarf is made in Scotland at a mill with a long heritage in producing cashmere.To create a subtle lustre and soft texture, the cashmere is washed in spring water, then woven on traditional looms and brushed with natural teasels.Measuring 168 x 30cm/66.1 x 11.8in, the design is hand-finished with fringing.";
-   
-  //     }
+      row.style.display=visible?"":"none";
+
+      Array.from(rows).slice(1).some(row=>row.style.display!="none")?null:table.insertAdjacentHTML("beforeend",`<tr id="nodatarow"><td colspan=" ${rows[0].children.length}" style="text-align:center">no available records</td></tr>`)
+  
       }
   }
     window.onload=genTable;
